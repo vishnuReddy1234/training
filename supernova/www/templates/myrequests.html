@@ -1,0 +1,50 @@
+<ion-view view-title="My Requests">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="request in requests" href="#/app/playlists/{{playlist.id}}" class="item">
+        <div class="row">
+  <div class="col col-40"><h2>
+  <i class="icon ion-person-stalker"></i>
+  {{request.guest}}<br/>
+  </h2>
+<p>
+  ID: {{request.req_id}}
+</p>
+</div>
+
+  <div class="col-60"><p>
+  <i class="icon ion-location"> </i>
+  {{request.destination_city}},{{request.country}}<br/>
+  <i class="icon ion-calendar"> </i>
+  {{request.check_in}} to  {{request.check_out}}<br/>
+  <i class="icon ion-checkmark-circled"> </i>
+  {{statusCodes[request.status].message}}
+</p></div>
+</div>
+
+
+      </ion-item>
+    </ion-list>
+    <div class="bar bar-footer">
+      <div class="tabs tabs-icon-top">
+        <a class="tab-item">
+          <i class="icon ion-record"></i>
+          New Request
+        </a>
+        <a class="tab-item">
+          <i class="icon ion-ios-circle-filled"></i>
+          Approval Pending
+        </a>
+        <a class="tab-item">
+          <i class="icon ion-checkmark-circled"></i>
+          Booked
+        </a>
+        <a class="tab-item">
+          <i class="icon ion-close-circled"></i>
+          Cancelled
+        </a>
+    </div>
+</div>
+
+  </ion-content>
+</ion-view>
